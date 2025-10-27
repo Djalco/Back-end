@@ -13,9 +13,44 @@
     }
   ],
   "firestore": {
-    "database": "(default)",
+    "database": "database.rules.json",
     "location": "europe-west3",
     "rules": "firestore.rules",
     "indexes": "firestore.indexes.json"
+  },
+  "emulators": {
+    "functions": {
+      "port": 5001
+    },
+    "firestore": {
+      "port": 8080
+    },
+    "ui": {
+      "enabled": true
+    },
+    "singleProjectMode": true,
+    "apphosting": {
+      "port": 3000,
+      "rootDirectory": "../front-end",
+      "startCommand": "npm run dev"
+    },
+    "database": {
+      "port": 9000
+    },
+    "hosting": {
+      "port": 5000
+    },
+    "storage": {
+      "port": 9199
+    },
+    "eventarc": {
+      "port": 9299
+    },
+    "tasks": {
+      "port": 9499
+    }
+  },
+  "storage": {
+    "rules": "storage.rules"
   }
 }

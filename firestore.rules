@@ -6,10 +6,11 @@ function isUserAuthentificated(){
 function isUserOwner(userId){
   return request.auth.uid == userId
 }
+// Allow read/write on all documents to any user
 service cloud.firestore {
   match /databases/{database}/documents {
-    match /users/{userId} {
-      allow read, write: if isUserAuthentificated () && isUserOwner(userId);
+    match /{document=**} {
+      allow read, write: if true;
     }
   }
 }
